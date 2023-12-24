@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'carpoolbackend',
     'rest_framework',
     'corsheaders',
-
 ]
 
 MIDDLEWARE = [
