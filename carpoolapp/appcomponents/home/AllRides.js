@@ -16,7 +16,7 @@ const AllRides = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    const apiEndpoint = 'http://192.168.0.104:8000/api/rides/';
+    const apiEndpoint = 'https://carpool-backend-rho.vercel.app/api/rides/';
 
     axios.get(apiEndpoint)
       .then(response => {
@@ -29,7 +29,7 @@ const AllRides = () => {
   }, []);
 
   const updateRides =()=>{
-    const apiEndpoint = 'http://192.168.0.104:8000/api/rides/';
+    const apiEndpoint = 'https://carpool-backend-rho.vercel.app/api/rides/';
 
     axios.get(apiEndpoint)
       .then(response => {

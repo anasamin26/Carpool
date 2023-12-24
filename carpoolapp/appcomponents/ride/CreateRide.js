@@ -153,7 +153,7 @@ export const CreateRide = forwardRef((props, ref) => {
        const formattedEndTime = formatDateToHHMMSS(endTime);
        console.log(loggedInUser);
       console.log('Colors: ',backgroundColor )
-       const response = await axios.post('http://192.168.0.104:8000/api/createrides/', {
+       const response = await axios.post('https://carpool-backend-rho.vercel.app/api/createrides/', {
         title: "Random",
         organizer_id:loggedInUser.id,
         organizer: loggedInUser.first_name +" "+ loggedInUser.last_name,

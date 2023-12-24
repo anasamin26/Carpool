@@ -19,7 +19,7 @@ export const Login = forwardRef(({ navigation }, ref) => {
   const fetchCsrfToken = async () => {
     try {
       // Make a request to the Django view that sets the CSRF token as a cookie
-      const response = await axios.get('http://192.168.0.104:8000/api/get-csrf-token/');
+      const response = await axios.get('https://carpool-backend-rho.vercel.app/api/get-csrf-token/');
       // The CSRF token is automatically set as a cookie in the response
       // You can extract the CSRF token from the response headers if needed
       const csrfToken = response.headers['set-cookie'];
@@ -38,7 +38,7 @@ export const Login = forwardRef(({ navigation }, ref) => {
     try {
       const csrfToken = await fetchCsrfToken();
       const response = await axios.post(
-        'http://192.168.0.104:8000/api/login/',
+        'https://carpool-backend-rho.vercel.app/api/login/',
         {
           email: email,
           password: password,
@@ -53,7 +53,7 @@ export const Login = forwardRef(({ navigation }, ref) => {
       if (response && response.data) {
         // Store user object in AsyncStorage
         const resp = await axios.get(
-          `http://192.168.0.104:8000/api/usersbyemail?email=${email}`
+          `https://carpool-backend-rho.vercel.app/api/usersbyemail?email=${email}`
           );
         if(resp&&resp.data){
         console.log("Login Resp Data: ",resp.data)

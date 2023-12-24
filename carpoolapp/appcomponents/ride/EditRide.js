@@ -102,7 +102,7 @@ export const EditRide = (route) => {
         const formattedStartTime = formatTimeToHHMMSS(startTime);
         const formattedEndTime = formatTimeToHHMMSS(endTime);
   
-        const response = await axios.put(`http://192.168.0.104:8000/api/updaterides/${rideId}/`, {
+        const response = await axios.put(`https://carpool-backend-rho.vercel.app/api/updaterides/${rideId}/`, {
         start_date:formattedStartDate,
         end_date:formattedEndDate,
         start_time:formattedStartTime,

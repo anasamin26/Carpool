@@ -85,7 +85,7 @@ const MyRides = ({ route }) => {
   const fetchRidesByOrganizer = async () => {
     try {
       if (loggedInUser) { // Check if loggedInUser is not null
-        const response = await axios.get(`http://192.168.0.104:8000/api/get_rides_by_organizer/${loggedInUser.id}/`);
+        const response = await axios.get(`https://carpool-backend-rho.vercel.app/api/get_rides_by_organizer/${loggedInUser.id}/`);
         console.log('API Response:', response.data);
         setAppointments(response.data);
       } 
@@ -95,7 +95,7 @@ const MyRides = ({ route }) => {
   };
 const fetchRidesByAttendee = async () => {
 try {
-  const apiUrl = 'http://192.168.0.104:8000/api/get_rides_by_attendee/';
+  const apiUrl = 'https://carpool-backend-rho.vercel.app/api/get_rides_by_attendee/';
   if (loggedInUser) { 
   const response = await axios.get(apiUrl, {
     params: {

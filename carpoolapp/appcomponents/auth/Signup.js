@@ -38,7 +38,7 @@ export const Signup = forwardRef((props, ref) => {
   const fetchCsrfToken = async () => {
     try {
       // Make a request to the Django view that sets the CSRF token as a cookie
-      const response = await axios.get('http://192.168.0.104:8000/api/get-csrf-token/');
+      const response = await axios.get('https://carpool-backend-rho.vercel.app/api/get-csrf-token/');
   
       // The CSRF token is automatically set as a cookie in the response
   
@@ -58,7 +58,7 @@ export const Signup = forwardRef((props, ref) => {
       const csrfToken = await fetchCsrfToken();
       console.log("Occupation: ",occupation)
       console.log("Gender: ",gender)
-      const response = await axios.post('http://192.168.0.104:8000/api/register/', {
+      const response = await axios.post('https://carpool-backend-rho.vercel.app/api/register/', {
         email:email,
         first_name: firstName,
         last_name: lastName,

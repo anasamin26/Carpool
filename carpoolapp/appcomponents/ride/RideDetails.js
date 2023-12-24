@@ -46,7 +46,7 @@ const RideDetailsScreen = ({ route }) => {
     try {
       if (loggedInUser) {
         await axios.delete(
-          'http://192.168.0.104:8000/api/delete_ride/',
+          'https://carpool-backend-rho.vercel.app/api/delete_ride/',
           {
             params: {
               rideId: rideDetails.id,
@@ -87,7 +87,7 @@ const RideDetailsScreen = ({ route }) => {
       // User is already in attendees, handle cancel request logic
       try {
         const response = await axios.post(
-          `http://192.168.0.104:8000/api/rides/${rideId}/cancel/`,
+          `https://carpool-backend-rho.vercel.app/api/rides/${rideId}/cancel/`,
           {
             id: parseInt(loggedInUser.id),
           }
@@ -113,7 +113,7 @@ const RideDetailsScreen = ({ route }) => {
     } else {
       try {
         const response = await axios.post(
-          `http://192.168.0.104:8000/api/rides/${rideId}/join/`,
+          `https://carpool-backend-rho.vercel.app/api/rides/${rideId}/join/`,
           {
             id: parseInt(loggedInUser.id),
           }
@@ -140,7 +140,7 @@ const RideDetailsScreen = ({ route }) => {
   const handleCancelButtonPress = async () => {
     try {
       const response = await axios.post(
-        `http://192.168.0.104:8000/api/rides/${rideId}/cancel/`,
+        `https://carpool-backend-rho.vercel.app/api/rides/${rideId}/cancel/`,
         {
           id: parseInt(loggedInUser.id),
         }
@@ -180,7 +180,7 @@ const RideDetailsScreen = ({ route }) => {
   }, []);
 
   useEffect(() => {
-    const apiEndpoint = `http://192.168.0.104:8000/api/rides/${rideId}/`;
+    const apiEndpoint = `https://carpool-backend-rho.vercel.app/api/rides/${rideId}/`;
     axios.get(apiEndpoint)
       .then(response => {
         setRideDetails(response.data);
