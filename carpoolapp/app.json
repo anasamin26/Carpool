@@ -26,7 +26,8 @@
         "CAMERA",
         "READ_EXTERNAL_STORAGE",
         "WRITE_EXTERNAL_STORAGE"
-      ]
+      ],
+      "package": "com.anasamin26.carpool"
     },
     "web": {
       "favicon": "./assets/favicon.png"

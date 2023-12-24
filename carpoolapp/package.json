@@ -58,7 +58,8 @@
     "styled-components": "^6.1.1",
     "tailwind-react-native-classnames": "^1.5.1",
     "twrnc": "^3.6.5",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "expo-updates": "~0.18.18"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
