@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lwwt-i%#ikct=)fzmq75hy74zcz*_8ohc6ok^4lx3=uy73y$-t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # settings.py
 
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'carpoolbackend',
     'rest_framework',
     'corsheaders',
-
 ]
 
 MIDDLEWARE = [
