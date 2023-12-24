@@ -27,7 +27,7 @@ DEBUG = True
 
 # settings.py
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.104']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.0.104','.vercel.app', '.now.sh']
 
 
 
@@ -85,16 +85,19 @@ WSGI_APPLICATION = 'carpoolproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'yourdbname',
-        'USER': 'postgres',
-        'PASSWORD': 'anas9235',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': os.getenv('POSTGRES_DATABASE'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': '5432',  # You may adjust the port if needed
     }
 }
+
 
 
 AUTH_USER_MODEL = 'carpoolbackend.User'
@@ -140,10 +143,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+import os
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
