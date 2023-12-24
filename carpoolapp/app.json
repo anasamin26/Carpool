@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "Carpool App",
+    "slug": "carpool",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/posts/post-img-1.jpg",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/posts/post-img-2.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#000"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#000"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6a0921ee-c8cd-471c-bba8-899a9d1c8d55"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/6a0921ee-c8cd-471c-bba8-899a9d1c8d55"
+    }
+  }
+}
